@@ -92,7 +92,7 @@ bot.onText(/\/admin/, (msg) => {
 
 // ── ASOSIY XABAR HANDLERI ─────────────────────
 
-bot.on('message', (msg) => {
+bot.on('message', async(msg) => {
   
   console.log('MSG:', msg.chat.id, '| step:', getSession(msg.chat.id).step, '| text:', msg.text, '| contact:', !!msg.contact);
 
@@ -103,19 +103,25 @@ bot.on('message', (msg) => {
   const s   = getSession(id);
   const txt = msg.text || '';
 
+  
+
   // ── Menyu ko'rish
   if (txt === '📋 Menyu ko\'rish') {
-    const menu = loadMenu();
-    let text = '📋 *Bugungi menyu:*\n\n';
-    for (const [product, info] of Object.entries(menu)) {
-      text += `*${product}*\n`;
-      for (const [size, price] of Object.entries(info.sizes)) {
-        text += `  • ${size} — ${price.toLocaleString()} so\'m\n`;
-      }
-      text += '\n';
-    }
-    return bot.sendMessage(id, text, { parse_mode: 'Markdown' });
+  const menu = loadMenu();
+  const images = menu._images || {};
+  
+  if (images.menu1 && images.menu2) {
+    await bot.sendMediaGroup(id, [
+      { type: 'photo', media: images.menu1 },
+      { type: 'photo', media: images.menu2, 
+        caption: '📋 *BINA fresh menyu*\n\nBuyurtma berish uchun 📦 tugmasini bosing!',
+        parse_mode: 'Markdown' }
+    ]);
+  } else {
+    bot.sendMessage(id, '📋 Menyu rasmlar yuklanmagan. /admin orqali yuklab qo\'ying.');
   }
+  return;
+}
 
   // ── Buyurtma boshlash
   if (txt === '📦 Buyurtma berish') {
@@ -136,15 +142,17 @@ bot.on('message', (msg) => {
     s.data.phone = msg.contact ? msg.contact.phone_number : txt;
     s.step = 'product';
     const menu = loadMenu();
-    return bot.sendMessage(id, 'Mahsulotni tanlang:', replyKb(Object.keys(menu)));
+    const products = Object.keys(menu).filter(k => k !== '_images');
+return bot.sendMessage(id, 'Mahsulotni tanlang:', replyKb(products));
   }
 
   // ── 2-qadam: mahsulot
   if (s.step === 'product') {
     const menu = loadMenu();
-    if (!menu[txt]) {
-      return bot.sendMessage(id, 'Iltimos, ro\'yxatdan tanlang:', replyKb(Object.keys(menu)));
-    }
+   if (!menu[txt] || txt === '_images') {
+  const products = Object.keys(menu).filter(k => k !== '_images');
+  return bot.sendMessage(id, 'Iltimos, ro\'yxatdan tanlang:', replyKb(products));
+}
     s.data.product = txt;
     s.step = 'size';
     const sizeButtons = Object.entries(menu[txt].sizes)
@@ -247,6 +255,13 @@ if (s.step === 'admin_menu_edit' && txt) {
       replyKb(['📦 Buyurtma berish', '📋 Menyu ko\'rish'])
     );
   }
+});
+
+bot.on('photo', (msg) => {
+  if (msg.chat.id !== ADMIN) return;
+  const fileId = msg.photo[msg.photo.length - 1].file_id;
+  console.log('FILE_ID:', fileId);
+  bot.sendMessage(ADMIN, `file_id: ${fileId}`);
 });
 
 // ── ADMIN CALLBACK ────────────────────────────
