@@ -1,0 +1,21 @@
+{
+  "Osh": {
+    "sizes": {
+      "Kichik": 15000,
+      "O'rta": 25000,
+      "Katta": 35000
+    }
+  },
+  "Shashlik": {
+    "sizes": {
+      "1 tayoq": 18000,
+      "2 tayoq": 35000
+    }
+  },
+  "Lagmon": {
+    "sizes": {
+      "Oddiy": 20000,
+      "Qo'sh": 38000
+    }
+  }
+}
