@@ -75,6 +75,7 @@ function inlineKb(rows) {
 bot.onText(/\/start/, (msg) => {
   const id = msg.chat.id;
   resetSession(id);
+  getSession(id);
   bot.sendMessage(id,
     'Assalomu alaykum! 👋\n\nBuyurtma berish yoki menyuni ko\'rish uchun tanlang.',
     replyKb(['📦 Buyurtma berish', '📋 Menyu ko\'rish'])
@@ -92,6 +93,9 @@ bot.onText(/\/admin/, (msg) => {
 // ── ASOSIY XABAR HANDLERI ─────────────────────
 
 bot.on('message', (msg) => {
+  
+  console.log('MSG:', msg.chat.id, '| step:', getSession(msg.chat.id).step, '| text:', msg.text, '| contact:', !!msg.contact);
+
   if (!msg.text && !msg.contact) return;
   if (msg.text && msg.text.startsWith('/')) return;
 
@@ -116,7 +120,8 @@ bot.on('message', (msg) => {
   // ── Buyurtma boshlash
   if (txt === '📦 Buyurtma berish') {
     resetSession(id);
-    s.step = 'phone';
+    const s2 = getSession(id);
+    s2.step = 'phone';
     return bot.sendMessage(id, 'Telefon raqamingizni yuboring:', {
       reply_markup: {
         keyboard: [[{ text: '📱 Raqamni yuborish', request_contact: true }]],
