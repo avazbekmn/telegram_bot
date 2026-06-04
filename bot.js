@@ -242,6 +242,7 @@ if (s.step === 'admin_menu_edit' && txt) {
       replyKb(['📦 Buyurtma berish', '📋 Menyu ko\'rish'])
     );
   }
+});
 
 // ── ADMIN CALLBACK ────────────────────────────
 
