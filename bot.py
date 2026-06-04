@@ -196,9 +196,11 @@ async def get_size(msg: types.Message, state: FSMContext):
 
 @dp.message(OrderForm.date)
 async def get_date(msg: types.Message, state: FSMContext):
-    options = get_delivery_options()
-    if msg.text not in options:
-        await msg.answer("Iltimos, taklif etilgan kunni tanlang.")
+    # Sana matnida "📅" belgisi bo'lsa qabul qilamiz
+    if not msg.text or "📅" not in msg.text:
+        options = get_delivery_options()
+        kb = make_kb(options, cols=1)
+        await msg.answer("Iltimos, taklif etilgan kunni tanlang.", reply_markup=kb)
         return
 
     await state.update_data(delivery_date=msg.text)
@@ -209,6 +211,7 @@ async def get_date(msg: types.Message, state: FSMContext):
 async def get_address(msg: types.Message, state: FSMContext):
     await state.update_data(address=msg.text)
     data = await state.get_data()
+    address = msg.text
     await state.clear()
 
     order_text = (
@@ -218,7 +221,7 @@ async def get_address(msg: types.Message, state: FSMContext):
         f"📦 Mahsulot: {data['product']} ({data['size']})\n"
         f"💰 Narx: {data['price']:,} so'm\n"
         f"📅 Sana: {data['delivery_date']}\n"
-        f"📍 Manzil: {data['address']}\n"
+        f"📍 Manzil: {address}\n"
         f"🆔 User ID: {msg.from_user.id}"
     )
 
