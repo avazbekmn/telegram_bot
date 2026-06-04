@@ -127,6 +127,7 @@ bot.on('message', (msg) => {
 
   // ── 1-qadam: telefon
   if (s.step === 'phone') {
+      if (!msg.contact && !txt) return;
     s.data.phone = msg.contact ? msg.contact.phone_number : txt;
     s.step = 'product';
     const menu = loadMenu();
@@ -223,12 +224,24 @@ bot.on('message', (msg) => {
   }
 
   // Boshqa holat — restart
-  if (txt && s.step === 'idle') {
+ // Boshqa holat — restart
+if (s.step === 'admin_menu_edit' && txt) {
+    try {
+      const clean = txt.replace(/```json|```/g, '').trim();
+      const parsed = JSON.parse(clean);
+      saveMenu(parsed);
+      resetSession(id);
+      return bot.sendMessage(id, '✅ Menyu yangilandi!');
+    } catch (_) {
+      return bot.sendMessage(id, '❌ JSON xato. Qayta yuboring.');
+    }
+  }
+
+  if (s.step === 'idle' && txt) {
     bot.sendMessage(id, 'Boshlash uchun /start yuboring yoki tugmani bosing.',
       replyKb(['📦 Buyurtma berish', '📋 Menyu ko\'rish'])
     );
   }
-});
 
 // ── ADMIN CALLBACK ────────────────────────────
 
@@ -275,21 +288,5 @@ bot.on('callback_query', (q) => {
 
 // ── ADMIN MENYU YANGILASH ─────────────────────
 
-bot.on('message', (msg) => {
-  if (msg.chat.id !== ADMIN) return;
-  const s = getSession(ADMIN);
-  if (s.step !== 'admin_menu_edit') return;
-  if (!msg.text) return;
-
-  try {
-    const clean = msg.text.replace(/```json|```/g, '').trim();
-    const menu = JSON.parse(clean);
-    saveMenu(menu);
-    resetSession(ADMIN);
-    bot.sendMessage(ADMIN, '✅ Menyu yangilandi!');
-  } catch (e) {
-    bot.sendMessage(ADMIN, `❌ JSON xato: ${e.message}\n\nQayta yuboring.`);
-  }
-});
 
 console.log('Bot ishga tushdi ✅');
