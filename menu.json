@@ -1,27 +1,91 @@
 {
-  
   "_images": {
     "menu1": "AgACAgIAAxkBAAIBWGohUiz5i0QeJQc3DDIMSTPPVxOxAAJxGWsbZpwQSacgsAgLxkZjAQADAgADeQADOwQ",
     "menu2": "AgACAgIAAxkBAAIBWWohUixhd0d6XZBT0o81HHa-4gbhAAJyGWsbZpwQScMhHGNBI2bSAQADAgADeQADOwQ"
   },
- 
-  "Osh": {
-    "sizes": {
-      "Kichik": 15000,
-      "O'rta": 25000,
-      "Katta": 35000
-    }
-  },
-  "Shashlik": {
-    "sizes": {
-      "1 tayoq": 18000,
-      "2 tayoq": 35000
-    }
-  },
-  "Lagmon": {
-    "sizes": {
-      "Oddiy": 20000,
-      "Qo'sh": 38000
+  "categories": {
+    "🍎 Fresh Juice": {
+      "icon": "🍎",
+      "items": {
+        "Olma": {
+          "sizes": { "0.5L PET": 15000, "1L PET": 25000 }
+        },
+        "Apelsin": {
+          "sizes": { "0.5L PET": 16000, "1L PET": 28000 }
+        },
+        "Sabzi": {
+          "sizes": { "0.5L PET": 14000, "1L PET": 24000 }
+        },
+        "Olma+Sabzi": {
+          "sizes": { "0.5L PET": 15000, "1L PET": 26000 }
+        },
+        "Lavlagi+Olma": {
+          "sizes": { "0.5L PET": 16000, "1L PET": 28000 }
+        },
+        "Lavlagi+Sabzi+Olma": {
+          "sizes": { "0.5L PET": 17000, "1L PET": 30000 }
+        },
+        "Apelsin+Olma": {
+          "sizes": { "0.5L PET": 16000, "1L PET": 28000 }
+        },
+        "Detox Smuzi": {
+          "sizes": { "0.5L PET": 18000, "1L PET": 32000 }
+        },
+        "Multifrukt": {
+          "sizes": { "0.5L PET": 17000, "1L PET": 30000 }
+        }
+      }
+    },
+    "🍹 Moxito": {
+      "icon": "🍹",
+      "items": {
+        "Klassik": {
+          "sizes": { "0.4L stakan": 18000, "0.6L stakan": 25000 }
+        },
+        "Sitrus": {
+          "sizes": { "0.4L stakan": 19000, "0.6L stakan": 26000 }
+        },
+        "Tarxun": {
+          "sizes": { "0.4L stakan": 19000, "0.6L stakan": 26000 }
+        },
+        "Yagodniy": {
+          "sizes": { "0.4L stakan": 20000, "0.6L stakan": 28000 }
+        }
+      }
+    },
+    "🥤 Kokteyl (Milkshake)": {
+      "icon": "🥤",
+      "items": {
+        "Klassik": {
+          "sizes": { "0.4L stakan": 22000, "0.6L stakan": 30000 }
+        },
+        "Qulupnayli": {
+          "sizes": { "0.4L stakan": 24000, "0.6L stakan": 32000 }
+        },
+        "Oreo": {
+          "sizes": { "0.4L stakan": 25000, "0.6L stakan": 34000 }
+        },
+        "Kit Kat": {
+          "sizes": { "0.4L stakan": 25000, "0.6L stakan": 34000 }
+        }
+      }
+    },
+    "🫐 Smuzi": {
+      "icon": "🫐",
+      "items": {
+        "Olma+banan": {
+          "sizes": { "0.4L stakan": 20000, "0.6L stakan": 28000 }
+        },
+        "Apelsin+olma+banan": {
+          "sizes": { "0.4L stakan": 22000, "0.6L stakan": 30000 }
+        },
+        "Apelsin+mango+sabzi": {
+          "sizes": { "0.4L stakan": 23000, "0.6L stakan": 32000 }
+        },
+        "Mix mavsumiy": {
+          "sizes": { "0.4L stakan": 22000, "0.6L stakan": 30000 }
+        }
+      }
     }
   }
 }
