@@ -5,85 +5,96 @@
   },
   "categories": {
     "🍎 Fresh Juice": {
-      "icon": "🍎",
+      "icon": "",
       "items": {
         "Olma": {
-          "sizes": { "0.5L PET": 15000, "1L PET": 25000 }
+          "sizes": { "300 ML": 20000, "500 ml": 30000 }
         },
-        "Apelsin": {
-          "sizes": { "0.5L PET": 16000, "1L PET": 28000 }
+        "🍊 Apelsin": {
+          "sizes": { "300 ml": 30000, "500 ml": 45000 }
         },
-        "Sabzi": {
-          "sizes": { "0.5L PET": 14000, "1L PET": 24000 }
+        "🥕 Sabzi": {
+          "sizes": { "300 ml": 15000, "500 ml": 25000 }
         },
-        "Olma+Sabzi": {
-          "sizes": { "0.5L PET": 15000, "1L PET": 26000 }
+        "🟣Lavlagi+🍏Olma": {
+          "sizes": { "300 ml": 20000, "500 ml": 30000 }
         },
-        "Lavlagi+Olma": {
-          "sizes": { "0.5L PET": 16000, "1L PET": 28000 }
-        },
-        "Lavlagi+Sabzi+Olma": {
-          "sizes": { "0.5L PET": 17000, "1L PET": 30000 }
-        },
-        "Apelsin+Olma": {
-          "sizes": { "0.5L PET": 16000, "1L PET": 28000 }
-        },
-        "Detox Smuzi": {
-          "sizes": { "0.5L PET": 18000, "1L PET": 32000 }
-        },
-        "Multifrukt": {
-          "sizes": { "0.5L PET": 17000, "1L PET": 30000 }
+        "🍏Olma+🥕Sabzi": {
+          "sizes": { "300 ml": 20000, "500 ml": 27000 }
+        },        
+        "🍊Apelsin+🍏Olma": {
+          "sizes": { "300 ml": 25000, "500 ml": 35000 }
         }
       }
     },
-    "🍹 Moxito": {
-      "icon": "🍹",
-      "items": {
-        "Klassik": {
-          "sizes": { "0.4L stakan": 18000, "0.6L stakan": 25000 }
+    "🍏🍋 Detox": {
+      "icon": "",
+      "items": {        
+        "🟣Lavlagi+🥕Sabzi+🍏Olma": {
+          "sizes": { "300 ml": 20000, "500 ml": 30000 }
         },
-        "Sitrus": {
-          "sizes": { "0.4L stakan": 19000, "0.6L stakan": 26000 }
+        "🍏Olma+🌿Selder+🥝Kiwi": {
+          "sizes": { "300 ml": 20000, "500 ml": 30000 }
         },
-        "Tarxun": {
-          "sizes": { "0.4L stakan": 19000, "0.6L stakan": 26000 }
-        },
-        "Yagodniy": {
-          "sizes": { "0.4L stakan": 20000, "0.6L stakan": 28000 }
+        "🍏Olma+🥒Bodring+🥝Kiwi": {
+          "sizes": { "300 ml": 20000, "500 ml": 30000 }
         }
       }
     },
-    "🥤 Kokteyl (Milkshake)": {
-      "icon": "🥤",
+    "🍈🧊🌿🍹Moxito": {
+      "icon": "",
       "items": {
-        "Klassik": {
-          "sizes": { "0.4L stakan": 22000, "0.6L stakan": 30000 }
+        "🍃Klassik": {
+          "sizes": { "0.5L stakan": 20000 }
         },
-        "Qulupnayli": {
-          "sizes": { "0.4L stakan": 24000, "0.6L stakan": 32000 }
+        "🍋Sitrus": {
+          "sizes": { "0.5L stakan": 25000 }
         },
-        "Oreo": {
-          "sizes": { "0.4L stakan": 25000, "0.6L stakan": 34000 }
+        "🥭Mango+🟣Marakuya": {
+          "sizes": { "0.5L stakan": 30000 }
         },
-        "Kit Kat": {
-          "sizes": { "0.4L stakan": 25000, "0.6L stakan": 34000 }
+        "🌿Tarxun": {
+          "sizes": { "0.5L stakan": 20000 }
+        },
+        "🍍🍓Yagodniy": {
+          "sizes": { "0.5L stakan": 25000 }
         }
       }
     },
-    "🫐 Smuzi": {
-      "icon": "🫐",
+    "🥤🍌 Kokteyl (Milkshake)": {
+      "icon": "",
       "items": {
-        "Olma+banan": {
-          "sizes": { "0.4L stakan": 20000, "0.6L stakan": 28000 }
+        "🍌Klassik": {
+          "sizes": { "0.5L stakan": 25000 }
         },
-        "Apelsin+olma+banan": {
-          "sizes": { "0.4L stakan": 22000, "0.6L stakan": 30000 }
+        "🍍🍓Yagodniy(mavsumiy)": {
+          "sizes": { "0.5L stakan": 35000 }
         },
-        "Apelsin+mango+sabzi": {
-          "sizes": { "0.4L stakan": 23000, "0.6L stakan": 32000 }
+        "🍪Oreo": {
+          "sizes": { "0.5L stakan": 35000 }
         },
-        "Mix mavsumiy": {
-          "sizes": { "0.4L stakan": 22000, "0.6L stakan": 30000 }
+        "🍫Kit Kat": {
+          "sizes": { "0.5L stakan": 35000 }
+        },
+        "🥜Snikers": {
+          "sizes": { "0.5L stakan": 35000 }
+        },
+        "🍫Twix": {
+          "sizes": { "0.5L stakan": 35000 }
+        },
+        "🥥Bounty": {
+          "sizes": { "0.5L stakan": 35000 }
+        }
+      }
+    },
+    "🍹 Smuzi": {
+      "icon": "",
+      "items": {
+        "🍓🍌Mix mavsumiy": {
+          "sizes": { "0.5L stakan": 30000 }
+        },
+        "🍊Apelsin+🥭Mango+🟣Marakuya": {
+          "sizes": { "0.5L stakan": 60000 }
         }
       }
     }

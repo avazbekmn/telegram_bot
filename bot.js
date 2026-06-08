@@ -91,7 +91,7 @@ function buildProductList() {
 function sendStart(id) {
   resetSession(id);
   bot.sendMessage(id,
-    '👋 *BINA Fresh* botiga xush kelibsiz!\n\nTabiiy meva sharbatlari, moxito, kokteyl va smuzilar. 🍎🍹\n\nQuyidagi menyudan tanlang:',
+    '👋 *BINA Fresh* botiga xush kelibsiz!\n\nTabiiy meva sharbatlari, moxito, kokteyl va smuzilar. 🍎🍹\n\n 📲 Instagramda bizni kuzating: https://instagram.com/bina.fresh \n\nQuyidagi menyudan tanlang:',
     { parse_mode: 'Markdown', ...mainMenu() }
   );
 }
